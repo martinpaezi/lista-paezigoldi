@@ -1,14 +1,47 @@
 <button (click)="mostrarLista = !mostrarLista">Ver lista de alumnos</button>
 
 @if(mostrarLista){
-  <ul>
-    <li 
-    [ngClass]="estudiante.aprobado ? 'aprobado' : 'desaprobado'"
-    [style.font-weight]="estudiante.aprobado ? 400 : 700" 
-    *ngFor="let estudiante of estudiantes">
-      {{estudiante.nombre}}
-      {{estudiante.nota}}
+
+  <div class="div">
+    <ul>
+      <p
+      [ngStyle]="{
+        'text-decoration': 'underline',
+      }"
+      >Alumno</p>
+      <li 
+      *ngFor="let estudiante of estudiantes">
+        {{estudiante.nombre}}
+      </li>
+    </ul>
+    <ul>
+      <p
+      [ngStyle]="{
+        'text-decoration': 'underline',
+      }"
+      >Nota</p>
+      <li 
+      *ngFor="let estudiante of estudiantes"
+      [ngStyle]="{
+        'text-align': 'center'
+      }"
+      >
+        {{estudiante.nota}}
+      </li>
+    </ul>
+    <ul>
+      <p
+      [ngStyle]="{
+        'text-decoration': 'underline',
+      }"
+      >Condición</p>
+      <li
+      [ngClass]="estudiante.aprobado ? 'aprobado' : 'desaprobado'"
+      [style.font-weight]="estudiante.aprobado ? 400 : 700" 
+      *ngFor="let estudiante of estudiantes">
       {{estudiante.aprobado ? "Aprobado": "Desaprobado"}}
-    </li>
-  </ul>
+      </li>
+    </ul>
+  </div>
+
   }

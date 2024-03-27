@@ -6,3 +6,15 @@
   color:green;
 }
 
+ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.div {
+  display: flex;
+}
+
+li {
+  list-style-type: none;
+}
