@@ -42,6 +42,31 @@
       {{estudiante.aprobado ? "Aprobado": "Desaprobado"}}
       </li>
     </ul>
+    <ul>
+      <p
+      [ngStyle]="{
+        'text-decoration': 'underline',
+      }"
+      >Condición de faltas</p>
+      <li
+      [ngClass]="estudiante.libre ? 'libre' : 'ok'"
+      [style.font-weight]="estudiante.libre ? 700 : 400" 
+      *ngFor="let estudiante of estudiantes">
+      {{estudiante.libre ? "Libre": "Regular"}}
+      </li>
+    </ul>
+    <ul>
+      <p
+      [ngStyle]="{
+        'text-decoration': 'underline',
+      }"
+      >Promoción</p>
+      <li
+      [ngClass]="estudiante.promocion ? 'si' : 'no'"
+      *ngFor="let estudiante of estudiantes">
+      {{estudiante.promocion ? "Sí": "No"}}
+      </li>
+    </ul>
   </div>
 
   }
